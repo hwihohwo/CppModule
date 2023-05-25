@@ -1,9 +1,7 @@
-NAME=phonebook
+NAME=brain
 CC=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS=./Contact.cpp \
-	 ./PhoneBook.cpp \
-	 ./main.cpp
+SRCS=main.cpp
 OBJS=$(SRCS:%.cpp=%.o)
 
 all :   $(NAME)

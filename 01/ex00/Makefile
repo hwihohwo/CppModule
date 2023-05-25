@@ -1,9 +1,10 @@
-NAME=phonebook
+NAME=zombie
 CC=c++
 FLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS=./Contact.cpp \
-	 ./PhoneBook.cpp \
-	 ./main.cpp
+SRCS=main.cpp \
+	 Zombie.cpp \
+	 newZombie.cpp \
+	 randomChump.cpp
 OBJS=$(SRCS:%.cpp=%.o)
 
 all :   $(NAME)
