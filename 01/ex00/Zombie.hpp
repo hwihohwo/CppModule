@@ -10,13 +10,9 @@ class Zombie {
 	public:
 		void announce(void);
 
-		Zombie(std::string name) : name(name) {
-			std::cout << this->name + " turns into zombie!" << std::endl;
-		};
+		Zombie(std::string name);
 
-		~Zombie() {
-			std::cout << this->name + " destroyed!" << std::endl;
-		}
+		~Zombie();
 };
 
 Zombie* newZombie(std::string name);
