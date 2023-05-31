@@ -2,13 +2,18 @@
 
 void Zombie::announce(void)
 {
-	std::cout << this->name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
+	if (this->name)
+		std::cout << this->name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::Zombie(std::string name) : name(name) {
+Zombie::Zombie(std::string name) : name(name)
+{
+	if (this->name)
 		std::cout << this->name + " turns into zombie!" << std::endl;
 }
 
-Zombie::~Zombie() {
-	std::cout << this->name + " destroyed!" << std::endl;
+Zombie::~Zombie()
+{
+	if (this->name)
+		std::cout << this->name + " destroyed!" << std::endl;
 }
