@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-# define Znum 100
+# define Znum 5
 
 class Zombie {
 	private:
