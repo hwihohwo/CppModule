@@ -18,15 +18,8 @@ class PhoneBook {
 		void exit_phonebook(void);
 		int get_is_exit(void);
 
-		PhoneBook() {
-			this->total_contact_num = 0;
-			this->is_exit = 0;
-			std::cout << "PhoneBook start!" << std::endl;
-		};
-
-		~PhoneBook() {
-			std::cout << "Good Bye!" << std::endl;
-		};
+		PhoneBook();
+		~PhoneBook();
 };
 
 #endif

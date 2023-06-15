@@ -100,3 +100,13 @@ void PhoneBook::exit_phonebook(void)
 {
 	this->is_exit = 1;
 }
+
+PhoneBook::PhoneBook() {
+	this->total_contact_num = 0;
+	this->is_exit = 0;
+	std::cout << "PhoneBook start!" << std::endl;
+}
+
+PhoneBook::~PhoneBook() {
+	std::cout << "Good Bye!" << std::endl;
+}
