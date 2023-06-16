@@ -83,16 +83,6 @@ int Fixed::ft_pow_(const int num, const int pow)
 
 std::ostream& operator <<(std::ostream& outputStream, const Fixed& num)
 {
-	int integer;
-	float fraction;
-	int fraction_mask;
-
-	fraction_mask = 0;
-	for (int i = 0; i < Fixed::getBitWidth(); i++)
-		fraction_mask += Fixed::ft_pow_(2, i);
-	integer = num.getRawBits() >> Fixed::getBitWidth();
-	fraction = num.getRawBits() & fraction_mask;
-	fraction /= Fixed::ft_pow_(2, Fixed::getBitWidth());
-	std::cout << integer + fraction;
+	std::cout << num.toFloat();
 	return outputStream;
 }
