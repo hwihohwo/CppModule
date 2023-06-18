@@ -18,6 +18,12 @@ class Point
 		Point(const Point& obj);
 		~Point();
 		Point& operator =(const Point& obj);
-}
+		Point operator -(const Point& obj) const;
+
+		Fixed getX() const;
+		Fixed getY() const;
+};
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

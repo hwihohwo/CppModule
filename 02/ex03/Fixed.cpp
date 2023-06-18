@@ -20,10 +20,7 @@ Fixed::Fixed(const float float_num)
 	this->num = roundf(float_num * Fixed::ft_pow_(2, Fixed::getBitWidth()));
 }
 
-Fixed::~Fixed(void)
-{
-	
-}
+Fixed::~Fixed(void) {}
 
 Fixed& Fixed::operator =(const Fixed& obj)
 {

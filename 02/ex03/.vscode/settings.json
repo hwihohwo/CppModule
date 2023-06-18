@@ -1,0 +1,26 @@
+{
+	"files.associations": {
+		"exception": "cpp",
+		"tuple": "cpp",
+		"utility": "cpp",
+		"xmemory": "cpp",
+		"xutility": "cpp",
+		"algorithm": "cpp",
+		"bit": "cpp",
+		"cmath": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"cstddef": "cpp",
+		"cstdint": "cpp",
+		"cstdio": "cpp",
+		"cstdlib": "cpp",
+		"cstring": "cpp",
+		"cwchar": "cpp",
+		"initializer_list": "cpp",
+		"limits": "cpp",
+		"new": "cpp",
+		"type_traits": "cpp",
+		"xstddef": "cpp",
+		"xtr1common": "cpp"
+	}
+}
