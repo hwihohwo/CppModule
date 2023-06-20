@@ -1,9 +1,36 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+	: name("default"), hit_points(10), energy_points(10), attack_damage(0)
+{
+	std::cout << "default ClapTrap constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string str)
-	: name(str), hit_points(100), energy_points(50), attack_damage(20)
+	: name(str), hit_points(10), energy_points(10), attack_damage(0)
 {
 	std::cout << this->name << " constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& obj)
+{
+	this->name = obj.getName();
+	this->hit_points = obj.getHitPoints();
+	this->energy_points = obj.getEnergyPoints();
+	this->attack_damage = obj.getAttackDamage();
+	std::cout << "ClapTrap copy constructor called" << std::endl;
+}
+
+ClapTrap& ClapTrap::operator =(const ClapTrap& obj)
+{
+	if (this == &obj)
+		return *this;
+	this->name = obj.getName();
+	this->hit_points = obj.getHitPoints();
+	this->energy_points = obj.getEnergyPoints();
+	this->attack_damage = obj.getAttackDamage();
+	std::cout << "ClapTrap operator assign called" << std::endl;
+	return *this;
 }
 
 ClapTrap::~ClapTrap()
@@ -57,32 +84,34 @@ void ClapTrap::beRepaired(unsigned int amount)
 	this->energy_points--;
 }
 
-unsigned int ClapTrap::getAttackDamage(void)
-{
-	return this->attack_damage;
-}
-
-void ClapTrap::setAttackDamage(const unsigned int num)
-{
-	this->attack_damage = num;
-}
-
-std::string& ClapTrap::getName()
+std::string ClapTrap::getName() const
 {
 	return this->name;
 }
-
-int ClapTrap::getHitPoints()
+int ClapTrap::getHitPoints() const
 {
 	return this->hit_points;
 }
-
-unsigned int ClapTrap::getEnergyPoints()
+unsigned int ClapTrap::getEnergyPoints() const
 {
 	return this->energy_points;
 }
 
-void ClapTrap::DecreaseEnergyPoint()
+unsigned int ClapTrap::getAttackDamage(void) const
 {
-	this->energy_points--;
+	return this->attack_damage;
+}
+
+void ClapTrap::setAttackDamage(unsigned int num)
+{
+	this->attack_damage = num;
+}
+
+void ClapTrap::printInfo(void) const
+{
+	std::cout << "-------" << this->name << "-------" << std::endl;
+	std::cout << "name : " << this->name << std::endl;
+	std::cout << "hp : " << this->hit_points << std::endl;
+	std::cout << "ep : " << this->energy_points << std::endl;
+	std::cout << "attack : " << this->attack_damage << std::endl << std::endl;
 }

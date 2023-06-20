@@ -5,6 +5,9 @@ int main(void)
 	ClapTrap jack("jack");
 	ClapTrap wattson("wattson");
 
+	jack.printInfo();
+	wattson.printInfo();
+
 	jack.attack("wattson");
 	wattson.takeDamage(jack.getAttackDamage());
 	wattson.attack("jack");

@@ -1,22 +1,21 @@
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
-	private:
-		std::string name;
+	protected:
 		int hit_points;
 		unsigned int energy_points;
 		unsigned int attack_damage;
 
 	public:
-		ClapTrap();
-		ClapTrap(std::string str);
-		ClapTrap(const ClapTrap& obj);
-		ClapTrap& operator =(const ClapTrap& obj);
-		~ClapTrap();
+		ScavTrap();
+		ScavTrap(std::string str);
+		ScavTrap(const ScavTrap& obj);
+		ScavTrap& operator =(const ScavTrap& obj);
+		~ScavTrap();
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
@@ -25,10 +24,8 @@ class ClapTrap
 		int getHitPoints() const;
 		unsigned int getEnergyPoints() const;
 		unsigned int getAttackDamage() const;
-
-		void setAttackDamage(unsigned int num);
 		void printInfo(void) const;
-
+		void guardGate();
 };
 
 #endif

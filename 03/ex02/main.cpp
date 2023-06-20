@@ -1,16 +1,22 @@
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-	ClapTrap luigi("luigi");
-	ScavTrap kupa("kupa");
-	ScavTrap mario("mario");
-	
-	kupa.guardGate();
-	mario.attack("kupa");
-	kupa.takeDamage(mario.getAttackDamage());
-	luigi.attack("kupa");
-	kupa.takeDamage(luigi.getAttackDamage());
-	for (int i = 0; i < 51; i++)
-		kupa.beRepaired(1);
+	FragTrap a("a");
+	FragTrap b("b");
+	ClapTrap c("c");
+	ScavTrap d("d");
+
+	a.printInfo();
+	b.printInfo();
+	c.printInfo();
+	d.printInfo();
+	for (int i = 0; i < 6; i++)
+	{
+		a.attack("b");
+		b.takeDamage(a.getAttackDamage());
+		b.beRepaired(10);
+	}
+	a.highFivesGuys();
 }

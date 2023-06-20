@@ -19,15 +19,14 @@ class ClapTrap
 		virtual ~ClapTrap();
 
 		virtual void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		std::string getName() const;
-		int getHitPoints() const;
-		unsigned int getEnergyPoints() const;
-		unsigned int getAttackDamage() const;
-
+		virtual void takeDamage(unsigned int amount);
+		virtual void beRepaired(unsigned int amount);
+		virtual std::string getName() const;
+		virtual int getHitPoints() const;
+		virtual unsigned int getEnergyPoints() const;
+		virtual unsigned int getAttackDamage() const;
+		virtual void printInfo(void) const;
 		void setAttackDamage(unsigned int num);
-		void printInfo(void) const;
 };
 
 #endif
