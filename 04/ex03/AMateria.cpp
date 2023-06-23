@@ -3,36 +3,33 @@
 AMateria::AMateria()
 {
 	this->type = "default";
-	std::cout << "AMateria default constructor called" << std::endl;
 }
 
 AMateria::AMateria(std::string const & type)
 {
 	this->type = type;
-	std::cout << "AMateria " << this->type << " constructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria& obj)
 {
-	std::cout << "AMateria copy constructor called" << std::endl;
+	this->type = obj.getType();
 }
 
 AMateria& AMateria::operator =(const AMateria& obj)
 {
-	std::cout << "AMateria assign operator called" << std::endl;
+	if (this == &obj)
+		return *this;
+	return *this;
 }
 
-AMateria::~AMateria()
-{
-	std::cout << "AMateria destructor called" << std::endl;
-}
+AMateria::~AMateria() {}
 
 std::string const & AMateria::getType() const
 {
 	return this->type;
 }
 
-void use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
-	std::cout << "Materia interface." << target.name << std::endl;
+	std::cout << "* uses " << this->type << " Materia to " << target.getName() << " *" << std::endl;
 }
