@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	Zombie* zombie = newZombie("link");
+	Zombie* zombie = new Zombie("link");
 
 	randomChump("zelda");
 	delete zombie;
