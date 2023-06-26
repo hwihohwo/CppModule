@@ -8,11 +8,9 @@ class Character : public ICharacter
 {
 	private:
 		std::string name;
-		AMateria** inventory;
-		AMateria** subinventory;
 	
 	public:
-
+		AMateria** inventory;
 		Character();
 		Character(std::string name);
 		Character(const Character& obj);
@@ -20,8 +18,6 @@ class Character : public ICharacter
 		~Character();
 
 		std::string const & getName() const;
-		AMateria** getInventory() const;
-		AMateria** getSubInventory() const;
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
