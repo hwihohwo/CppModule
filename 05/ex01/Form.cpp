@@ -31,7 +31,6 @@ Form& Form::operator =(const Form& obj)
 {
 	if (this == &obj)
 		return *this;
-	this->is_signed = obj.getIsSigned();
 	return *this;
 }
 
@@ -63,8 +62,8 @@ void Form::beSigned(Bureaucrat& obj)
 		throw Form::GradeTooLowException();
 	else
 	{
-		obj.signForm(this);
 		this->is_signed = true;
+		std::cout << obj.getName() << " signed form" <<  std::endl;
 	}
 }
 

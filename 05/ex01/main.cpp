@@ -26,33 +26,8 @@ int main(void)
 	}
 	
 	std::cout << docu << std::endl;
-
-	try
-	{
-		docu.beSigned(b);
-	}
-	catch (Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	
-	try
-	{
-		docu.beSigned(a);
-	}
-	catch (Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
+	b.signForm(docu);
+	a.signForm(docu);
 	std::cout << docu << std::endl;
-
-	try
-	{
-		docu.beSigned(a);
-	}
-	catch (Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	a.signForm(docu);
 }
