@@ -8,16 +8,16 @@
 class RobotomyRequestForm : public AForm
 {
 	private:
-		const std::string type;
+		std::string target;
 	public:
 		RobotomyRequestForm();
-		RobotomyRequestForm(const std::string& name);
+		RobotomyRequestForm(const std::string& target);
 		RobotomyRequestForm(const RobotomyRequestForm& obj);
 		RobotomyRequestForm& operator =(const RobotomyRequestForm& obj);
 		~RobotomyRequestForm();
 
 		void execute_each_form(Bureaucrat const & executor) const;
-		std::string getType() const;
+		std::string getTarget() const;
 };
 
 #endif

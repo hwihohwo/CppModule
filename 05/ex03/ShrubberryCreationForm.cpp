@@ -1,18 +1,19 @@
 #include "ShrubberryCreationForm.hpp"
 
 ShrubberryCreationForm::ShrubberryCreationForm()
-	: AForm("default", 145, 137), type("shrubberry creation") {}
+	: AForm("shrubberry creation", 145, 137), target("default") {}
 
-ShrubberryCreationForm::ShrubberryCreationForm(const std::string& name)
-	: AForm(name, 145, 137), type("shrubberry creation") {}
+ShrubberryCreationForm::ShrubberryCreationForm(const std::string& target)
+	: AForm("shrubberry creation", 145, 137), target(target) {}
 
 ShrubberryCreationForm::ShrubberryCreationForm(const ShrubberryCreationForm& obj)
-	: AForm(obj.getName(), 145, 137), type("shrubberry creation") {}
+	: AForm("shrubberry creation", 145, 137), target(obj.getTarget()) {}
 
 ShrubberryCreationForm& ShrubberryCreationForm::operator =(const ShrubberryCreationForm& obj)
 {
 	if (this == &obj)
 		return *this;
+	this->target = obj.getTarget();
 	return *this;
 }
 
@@ -25,7 +26,7 @@ std::string getAsciiTree()
 
 void ShrubberryCreationForm::execute_each_form(Bureaucrat const & executor) const
 {
-	std::string filename = this->getName();
+	std::string filename = this->getTarget();
 	std::ofstream filewrite;
 	std::string ascii_tree = getAsciiTree();
 
@@ -35,10 +36,10 @@ void ShrubberryCreationForm::execute_each_form(Bureaucrat const & executor) cons
 		filewrite.write(ascii_tree.c_str(), ascii_tree.length());
 		filewrite.close();
 	}
-	std::cout << executor.getName() << " executed " << this->type << std::endl;
+	std::cout << executor.getName() << " executed " << this->getName() << std::endl;
 }
 
-std::string ShrubberryCreationForm::getType() const
+std::string ShrubberryCreationForm::getTarget() const
 {
-	return this->type;
+	return this->target;
 }
