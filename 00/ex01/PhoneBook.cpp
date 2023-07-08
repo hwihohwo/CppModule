@@ -28,6 +28,13 @@ int PhoneBook::is_valid_index(int index)
 		return (1);
 }
 
+void PhoneBook::cin_fail(void)
+{
+	std::cin.clear();
+	std::cin.ignore(1000, '\n');
+	std::cout << "Wrong index. Please try again." << std::endl;
+}
+
 int PhoneBook::get_is_exit(void)
 {
 	return this->is_exit;
@@ -81,9 +88,9 @@ void PhoneBook::search_contact(void)
 	{
 		std::cout << "Please input index you want to see more information" << std::endl << '>';
 		std::cin >> index_to_find;
-		if (!is_valid_index(index_to_find))
+		if (!is_valid_index(index_to_find) || std::cin.fail())
 		{
-			std::cout << "Wrong index. Please try again." << std::endl;
+			cin_fail();
 			continue;
 		}
 		else
@@ -94,6 +101,7 @@ void PhoneBook::search_contact(void)
 	std::cout << "Nickname : " << this->contacts[index_to_find].get_nickname() << std::endl;
 	std::cout << "Phone number : " << this->contacts[index_to_find].get_phone_number() << std::endl;
 	std::cout << "Darkest secret : " << this->contacts[index_to_find].get_darkest_stcret() << std::endl;
+	std::cin.ignore(1000, '\n');
 }
 
 void PhoneBook::exit_phonebook(void)

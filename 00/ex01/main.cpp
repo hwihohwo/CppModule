@@ -20,5 +20,6 @@ int	main(void)
 			phonebook.exit_phonebook();
 		else
 			std::cout << "Wrong order. Please try ADD or SEARCH or EXIT only." << std::endl;
+		std::cin.ignore(1000, '\n');
 	}
 }

@@ -11,6 +11,7 @@ class PhoneBook {
 
 		void print_10_char(std::string str);
 		int is_valid_index(int index);
+		void cin_fail();
 
 	public:
 		void add_contact(void);
