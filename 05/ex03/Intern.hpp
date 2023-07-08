@@ -7,8 +7,18 @@
 
 class Intern
 {
+	private:
+		AForm* _makeShrubberryCreation(const std::string& target);
+		AForm* _makeRobotomyRequest(const std::string& target);
+		AForm* _makePresidentialPardon(const std::string& target);
+		
 	public:
-		AForm* makeForm()
-}
+		Intern();
+		Intern(const Intern& obj);
+		Intern& operator =(const Intern& obj);
+		~Intern();
+
+		AForm* makeForm(const std::string& name, const std::string& target);
+};
 
 #endif

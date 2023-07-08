@@ -47,7 +47,6 @@ class AForm
 		void beSigned(Bureaucrat& obj);
 		void execute(Bureaucrat const & executor) const;
 		virtual void execute_each_form(Bureaucrat const & executor) const = 0;
-		virtual std::string getType() const = 0;
 };
 
 std::ostream& operator <<(std::ostream& outputStream, const AForm& obj);
