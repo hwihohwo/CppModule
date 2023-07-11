@@ -1,16 +1,13 @@
-NAME=violence
-CXX=c++
-CXXFLAGS=-Wall -Wextra -Werror -std=c++98
-SRCS=main.cpp \
-	 Weapon.cpp \
-	 HumanA.cpp \
-	 HumanB.cpp
+NAME=scalarConverter
+CC=c++
+FLAGS=-Wall -Wextra -Werror -std=c++98
+SRCS=
 OBJS=$(SRCS:%.cpp=%.o)
 
 all :   $(NAME)
 
 $(NAME)     :   $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRCS) -I .
+	$(CC) $(FLAGS) -o $(NAME) $(SRCS) -I .
 
 clean   :
 	rm -f $(OBJS)
