@@ -12,6 +12,8 @@ FileRead::FileRead(std::string filename)
 		{
 			std::getline(this->fileread, tmp);
 			this->file_content.append(tmp);
+			if (!this->fileread.eof())
+				this->file_content.append("\n");
 		}
 		this->fileread.close();
 	}

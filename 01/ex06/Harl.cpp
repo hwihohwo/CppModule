@@ -16,10 +16,13 @@ void Harl::complain(std::string level)
 	{
 		case 0:
 			(this->*harl_func[0])();
+			__attribute__((fallthrough));
 		case 1:
 			(this->*harl_func[1])();
+			__attribute__((fallthrough));
 		case 2:
 			(this->*harl_func[2])();
+			__attribute__((fallthrough));
 		case 3:
 			(this->*harl_func[3])();
 			break;
