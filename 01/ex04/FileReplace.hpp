@@ -1,12 +1,16 @@
-#ifndef FILEWRITE_HPP
-# define FILEWRITE_HPP
+#ifndef FILEREAD_HPP
+# define FILEREAD_HPP
 
 #include <fstream>
 #include <iostream>
 
-class FileWrite
+class FileReplace
 {
 	private:
+		std::string filename;
+		std::string file_content;
+		std::ifstream fileread;
+
 		std::string str_to_find;
 		std::string str_to_write;
 		std::string replaced_str;
@@ -14,9 +18,8 @@ class FileWrite
 
 	public:
 		void replace_str(std::string& src_string);
-		void write_replaced_str();
 
-		FileWrite(std::string filename, std::string str1, std::string str2);
+		FileReplace(std::string filename, std::string str1, std::string str2);
 };
 
 #endif

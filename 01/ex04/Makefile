@@ -2,14 +2,16 @@ NAME=sed_is_for_losers
 CXX=c++
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98
 SRCS=main.cpp \
-	 FileRead.cpp \
-	 FileWrite.cpp
+	 FileReplace.cpp
 OBJS=$(SRCS:%.cpp=%.o)
 
 all :   $(NAME)
 
+%.o : 	%.cpp
+	$(CXX) $(CXXFLAGS) -c $(SRCS)
+
 $(NAME)     :   $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRCS) -I .
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I .
 
 clean   :
 	rm -f $(OBJS)
